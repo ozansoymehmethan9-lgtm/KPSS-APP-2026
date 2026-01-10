@@ -39,8 +39,6 @@ Modern, hızlı ve kullanımı kolay bir KPSS (Kamu Personeli Seçme Sınavı) h
 - **Grafikler**: Matplotlib
 - **Görüntü İşleme**: Pillow (PIL)
 
-## 📄 Lisans
-
 ## 📄 License
 
 This project is licensed under the MIT License – see the [LICENSE](LICENSE) file for details.
