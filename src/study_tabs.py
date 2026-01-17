@@ -74,6 +74,12 @@ class StudyTabsMixin:
             target = self.tree_gy if s["kategori"] == "GY" else self.tree_gk
             target.insert("", "end", iid=str(s["id"]), values=(s["ders"], s["konu"], s["durum"]))
 
+    def log_event(self, msg):
+        conn = sqlite3.connect(DB_FILE)
+        conn.execute("INSERT INTO logs (tarih, olay) VALUES (?,?)",
+            (datetime.now().isoformat(), msg))
+        conn.commit(); conn.close()
+
     # ---- 4. HEDEFLER ----
     def build_goals_tab(self):
         self.tab_goals.grid_columnconfigure(0, weight=1); self.tab_goals.grid_rowconfigure(1, weight=1)
